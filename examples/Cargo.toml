@@ -12,6 +12,14 @@ name = "hello_triangle"
 path = "hello_triangle_rust/main.rs"
 
 [[bin]]
+name = "deadlock"
+path = "deadlock/main.rs"
+
+[[bin]]
+name = "initialization_failed"
+path = "initialization_failed/main.rs"
+
+[[bin]]
 name = "hello_compute"
 path = "hello_compute_rust/main.rs"
 
@@ -27,3 +35,4 @@ vulkan = ["wgpu/vulkan"]
 wgpu-native = { path = "../wgpu-native" }
 wgpu = { path = "../wgpu-rs" }
 env_logger = "0.5"
+rayon = "1"
