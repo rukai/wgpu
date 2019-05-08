@@ -1,16 +1,20 @@
 [package]
 name = "examples"
 version = "0.1.0"
+edition = "2018"
 authors = [
 	"Dzmitry Malyshau <kvark@mozilla.com>",
 	"Joshua Groves <josh@joshgroves.com>",
 ]
-edition = "2018"
 publish = false
 
 [[bin]]
 name = "hello_triangle"
 path = "hello_triangle_rust/main.rs"
+
+[[bin]]
+name = "repro"
+path = "repro/main.rs"
 
 [[bin]]
 name = "hello_compute"
@@ -27,4 +31,5 @@ vulkan = ["wgpu/vulkan"]
 [dependencies]
 wgpu-native = { path = "../wgpu-native" }
 wgpu = { path = "../wgpu-rs" }
-env_logger = "0.6"
+env_logger = "0.5"
+rayon = "1"
