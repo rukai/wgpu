@@ -13,6 +13,10 @@ name = "hello_triangle"
 path = "hello_triangle_rust/main.rs"
 
 [[bin]]
+name = "repro"
+path = "repro/main.rs"
+
+[[bin]]
 name = "hello_compute"
 path = "hello_compute_rust/main.rs"
 
@@ -28,3 +32,4 @@ vulkan = ["wgpu/vulkan"]
 wgpu-native = { path = "../wgpu-native" }
 wgpu = { path = "../wgpu-rs" }
 env_logger = "0.6"
+rayon = "1"
