@@ -70,8 +70,9 @@ unsafe impl<T> peek_poke::Poke for Id<T> {
 }
 
 impl<T> peek_poke::Peek for Id<T> {
-    unsafe fn peek_from(&mut self, data: *const u8) -> *const u8 {
-        self.0.peek_from(data)
+    unsafe fn peek_from(data: *const u8, output: *mut Self) -> *const u8 {
+        //self.0.peek_from(data)
+        unimplemented!()
     }
 }
 

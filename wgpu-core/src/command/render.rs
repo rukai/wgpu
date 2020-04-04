@@ -40,7 +40,7 @@ use wgt::{
 };
 use arrayvec::ArrayVec;
 use hal::command::CommandBuffer as _;
-use peek_poke::{Peek, PeekCopy, Poke};
+use peek_poke::PeekPoke;
 
 use std::{
     borrow::Borrow,
@@ -68,7 +68,7 @@ pub struct RenderPassDescriptor<'a> {
     pub depth_stencil_attachment: Option<&'a RenderPassDepthStencilAttachmentDescriptor>,
 }
 
-#[derive(Clone, Copy, Debug, PeekCopy, Poke)]
+#[derive(Clone, Copy, Debug, PeekPoke)]
 pub struct Rect<T> {
     pub x: T,
     pub y: T,
@@ -76,7 +76,7 @@ pub struct Rect<T> {
     pub h: T,
 }
 
-#[derive(Clone, Copy, Debug, PeekCopy, Poke)]
+#[derive(Clone, Copy, Debug, PeekPoke)]
 enum RenderCommand {
     SetBindGroup {
         index: u8,

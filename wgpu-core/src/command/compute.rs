@@ -15,12 +15,12 @@ use crate::{
 
 use wgt::{BufferAddress, BufferUsage, DynamicOffset, BIND_BUFFER_ALIGNMENT};
 use hal::command::CommandBuffer as _;
-use peek_poke::{Peek, PeekCopy, Poke};
+use peek_poke::{PeekPoke};
 
 use std::iter;
 
 
-#[derive(Clone, Copy, Debug, PeekCopy, Poke)]
+#[derive(Clone, Copy, Debug, PeekPoke)]
 enum ComputeCommand {
     SetBindGroup {
         index: u8,

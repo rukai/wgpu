@@ -36,9 +36,10 @@ use std::{
     thread::ThreadId,
 };
 use wgt::RenderPassColorAttachmentDescriptorBase;
+use peek_poke::PeekPoke;
 
 
-#[derive(Clone, Copy, Debug, peek_poke::PeekCopy, peek_poke::Poke)]
+#[derive(Clone, Copy, Debug, PeekPoke)]
 struct PhantomSlice<T>(PhantomData<T>);
 
 impl<T> PhantomSlice<T> {
@@ -201,7 +202,7 @@ pub type RawRenderPassColorAttachmentDescriptor =
     RenderPassColorAttachmentDescriptorBase<id::TextureViewId, id::TextureViewId>;
 
 #[repr(C)]
-#[derive(peek_poke::PeekCopy, peek_poke::Poke)]
+#[derive(PeekPoke)]
 pub struct RawRenderTargets {
     pub colors: [RawRenderPassColorAttachmentDescriptor; MAX_COLOR_TARGETS],
     pub depth_stencil: RenderPassDepthStencilAttachmentDescriptor,
